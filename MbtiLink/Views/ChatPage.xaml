@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MbtiLink.Views.ChatPage"
+             Title="채팅">
+    <StackLayout Padding="10">
+        <ListView ItemsSource="{Binding Messages}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding .}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout Orientation="Horizontal">
+            <Entry Text="{Binding Message}" Placeholder="메시지 입력" HorizontalOptions="FillAndExpand" />
+            <Button Text="전송" Command="{Binding SendMessageCommand}" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
